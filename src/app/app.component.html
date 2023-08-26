@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="card mx-auto" style="width: 34rem;">
+        <div class="card-body ">
+            <h2 class="text-primary text-center">Password Generator</h2>
+
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" (keyup)="readLength($event)"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Enter Length</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                    (change)="onChangeUseLetters()" (change)="changeLetter($event)">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Use Letters
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="flexCheckDefault"
+                    (change)="onChangeUseNumbers()" (change)="changeNumber($event)">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Use Numbers
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                    (change)="onChangeUseSymbols()" (change)="changeSymbol($event)">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Use Symbols
+                </label>
+            </div>
+
+
+            <div class="d-grid gap-2 col-10 mx-auto" style="margin-top: 18px;">
+                <button class="btn btn-primary" type="button" (click)="passGen()"
+                    [disabled]="(!length || toogleBool1) && (!length || toogleBool2) && (!length || toogleBool1)">Generate!</button>
+            </div>
+
+            <div class="form-floating mb-3" *ngIf="password">
+                <input type="email" class="form-control" id="floatingInput" [value]="password"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Your Password is :</label>
+            </div>
+
+        </div>
+    </div>
+</div>
